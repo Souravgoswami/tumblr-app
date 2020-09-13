@@ -1,4 +1,13 @@
 <div id="page_wrapper">
+	<% if @post.errors.any? %>
+		<%= pluralize @post.errors.count, 'error' %> stopped this post from saving
+
+		<ul>
+			<% @post.errors.full_messages.each do |x| %>
+				<li><%= x %></li>
+			<% end %>
+		</ul>
+	<% end %>
 	<%= form_for :post, url: posts_path do |f| %>
 		<p>
 			<%= f.label :title %><br>

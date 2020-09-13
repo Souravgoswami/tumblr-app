@@ -4,6 +4,8 @@
 			<%= link_to post.title, post %>
 		</h2>
 
+		<p class="body"><%= truncate_text(post.body, 50, '...') %>
+
 		<p class="date"><%= time_ago_in_words post.created_at %> ago</p>
 	</div>
 <% end %>
