@@ -1,0 +1,27 @@
+
+	<div id="wrapper">
+	<section class="card-list">
+		<% 12.times do |i| %>
+			<article class="card">
+				<header class="card-header">
+					<p><%= Time.now.strftime("%a, %d %B, %Y") %></p>
+					<hr>
+					<h2><%= hipsum %></h2>
+				</header>
+
+				<div class="card-author">
+					<div class="author-avatar">
+						<%= image_tag "members/member-#{i + 1}.jpg" %>
+					</div>
+
+					<svg class="half-circle" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 491 184"><defs><linearGradient y2="2" x2="256" y1="514" x1="256" gradientTransform="scale(-1 1) rotate(45 404 -512)" gradientUnits="userSpaceOnUse" id="b" xlink:href="#a"/></defs><linearGradient gradientTransform="scale(-1 1) rotate(45 2 -361)" y2="2" x2="256" y1="514" x1="256" gradientUnits="userSpaceOnUse" id="a"><stop offset="0" stop-color="#2af598"/><stop offset="1" stop-color="#009efd"/></linearGradient><path d="M0 0a266 266 0 00245 184A255 255 0 00491 0h-42c-11 26-27 54-51 81C283 189 95 125 41 0z" fill="url(#b)"/></svg>
+
+					<div class="author-name">
+						<div class="author-name-prefix">Author</div>
+						<%= @names.rotate![0] %>
+					</div>
+				</div>
+			</article>
+		<% end %>
+	</section>
+	</div>
